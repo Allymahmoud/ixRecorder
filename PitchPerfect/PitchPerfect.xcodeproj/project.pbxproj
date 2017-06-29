@@ -12,6 +12,7 @@
 		A0849E531F01512400F8D8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0849E511F01512400F8D8D7 /* Main.storyboard */; };
 		A0849E551F01512400F8D8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0849E541F01512400F8D8D7 /* Assets.xcassets */; };
 		A0849E581F01512400F8D8D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0849E561F01512400F8D8D7 /* LaunchScreen.storyboard */; };
+		A0849E841F04355A00F8D8D7 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0849E831F04355A00F8D8D7 /* PlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A0849E541F01512400F8D8D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0849E571F01512400F8D8D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0849E591F01512400F8D8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0849E831F04355A00F8D8D7 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				A0849E4D1F01512400F8D8D7 /* AppDelegate.swift */,
 				A0849E4F1F01512400F8D8D7 /* ViewController.swift */,
+				A0849E831F04355A00F8D8D7 /* PlayViewController.swift */,
 				A0849E511F01512400F8D8D7 /* Main.storyboard */,
 				A0849E541F01512400F8D8D7 /* Assets.xcassets */,
 				A0849E561F01512400F8D8D7 /* LaunchScreen.storyboard */,
@@ -96,6 +99,7 @@
 				TargetAttributes = {
 					A0849E491F01512400F8D8D7 = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = FM2EY39XWE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -137,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0849E501F01512400F8D8D7 /* ViewController.swift in Sources */,
+				A0849E841F04355A00F8D8D7 /* PlayViewController.swift in Sources */,
 				A0849E4E1F01512400F8D8D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FM2EY39XWE;
 				INFOPLIST_FILE = PitchPerfect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.superbluebird.PitchPerfect;
@@ -274,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FM2EY39XWE;
 				INFOPLIST_FILE = PitchPerfect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.superbluebird.PitchPerfect;
@@ -301,6 +308,7 @@
 				A0849E5E1F01512400F8D8D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

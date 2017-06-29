@@ -16,8 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var Stopbutton: UIButton!
     //@IBOutlet weak var Playbutton: UIButton!
     
-    @IBOutlet weak var Playbutton: UIButton!
-   
+      @IBOutlet weak var hint_text: UILabel!
     
     // 1
     var audioPlayer:AVAudioPlayer!
@@ -27,6 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //Recordbutton.tintColor
+        
         
         
         //4
@@ -53,8 +53,10 @@ class ViewController: UIViewController {
             } catch {
                 print(error)
             }
-            //show stop button
+            //hide record buttn and show stop button
+            Recordbutton.isHidden = true
             Stopbutton.isHidden = false
+            hint_text.text = "Recording..."
         }
    
         
@@ -75,14 +77,31 @@ class ViewController: UIViewController {
         } catch {
             print(error)
         }
+        hint_text.text = "Press button to record"
         
         // Check to see if audio file exists, if so present play button
         if self.verifyFileExists() {
             print("file exists")
-            Playbutton.isHidden = false
+            
+            //hide stop button and show play button
+            Stopbutton.isHidden = true
+            Recordbutton.isHidden = false
+            
+            self.performSegue(withIdentifier: "playsegue", sender: sender)
+            
+            
+        
+            
         } else {
             print("There was a problem recording")
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let play_view: PlayViewController = segue.destination as! PlayViewController
+        
+        play_view.audio_file_location = audioFileLocation()
+        
     }
     
     
@@ -92,13 +111,13 @@ class ViewController: UIViewController {
 //    }
 
     
-    @IBAction func Playbutton(_ sender: Any) {
-        counter += 1
-        print("play recording button clicked \(counter)")
-        
-        //play the sudio
-        self.playAudio()
-    }
+//    @IBAction func Playbutton(_ sender: Any) {
+//        counter += 1
+//        print("play recording button clicked \(counter)")
+//        
+//        //play the sudio
+//        self.playAudio()
+//    }
 
     // 3
     func prepareAudioRecorder() {
@@ -114,18 +133,7 @@ class ViewController: UIViewController {
     }
     
     
-    func playAudio() {
-        let audioSession = AVAudioSession.sharedInstance()
-        
-        do {
-            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
-            try audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: self.audioFileLocation()))
-            audioPlayer.prepareToPlay()
-            audioPlayer.play()
-        } catch {
-            print(error)
-        }
-    }
+    
     
     // 2
     // MARK: Helpers
